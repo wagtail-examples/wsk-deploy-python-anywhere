@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "wagtail-starter-kit"
+version = "0.1.0"
+description = "Full Stack Wagtail Starter Kit"
+authors = ["nickmoreton <nickmoreton@me.com>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+wagtail = "^6.2.2"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.8.0"
+black = "^24.8.0"
+flake8 = "^7.1.1"
+isort = "^5.13.2"
+pyupgrade = "^3.17.0"
+django-upgrade = "^1.21.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

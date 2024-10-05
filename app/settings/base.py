@@ -12,9 +12,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from pathlib import Path
 
-PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR = os.path.dirname(PROJECT_DIR)
+PROJECT_DIR = Path.resolve(Path(__file__).parent.parent)
+BASE_DIR = Path.resolve(PROJECT_DIR.parent)
 
 environment = os.environ.copy()
 
@@ -158,7 +159,7 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, "static_compiled"),
+    os.path.join(BASE_DIR, "static_compiled"),
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")

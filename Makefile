@@ -9,7 +9,7 @@
 # DC = docker compose -f compose.yaml -f compose.mysql.override.yaml
 
 # PostgreSQL Database
-DC = docker compose -f compose.yaml -f compose.postgresql.override.yaml
+DC = BUILDKIT_PROGRESS=plain docker compose -f compose.yaml -f compose.postgresql.override.yaml
 
 # Default target
 .PHONY: help

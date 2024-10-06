@@ -1,3 +1,12 @@
+FROM node:20
+
+COPY package.json package-lock.json ./
+RUN npm install
+
+COPY ./static_src/ ./static_src/
+COPY ./scripts/ ./scripts/
+RUN npm run build
+
 # Use an official Python runtime based on Debian 10 "buster" as a parent image.
 FROM python:3.10-bookworm
 
@@ -37,6 +46,8 @@ RUN ${DBMODULE}
 
 # Use /app folder as a directory where the source code is stored.
 WORKDIR /app
+
+COPY --from=0 ./static_compiled ./static_compiled
 
 # Set this directory to be owned by the "wagtail" user. This Wagtail project
 # uses SQLite, the folder needs to be owned by the user that

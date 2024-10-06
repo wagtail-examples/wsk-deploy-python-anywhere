@@ -45,6 +45,8 @@ By default, the project uses PostgreSQL. If you'd like to use MySQL or Sqlite3 i
 
 The project uses [Pico CSS](https://picocss.com/) for styling. It's a minmal setup that you can build on.
 
+When you first run the project you will probably notice that no styling is applied. This is because the first time you run the project with `make up` the compiled frontend files won't be available. Just run the frontend build scripts below and refresh the page.
+
 ### JavaScript
 
 The project make no assumption about JavaScript libraries. You can add your own as needed.

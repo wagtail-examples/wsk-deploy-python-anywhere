@@ -1,13 +1,17 @@
-# Wagtail Starter Kit
+# Wagtail Starter Kit (base)
 
 This is a starter kit for a Wagtail project. It includes a Docker setup for local development, a basic project structure, and some useful tools and libraries.
 
 ## Features
 
-- Docker setup for local development
-- Basic project structure
-- Makefile for common tasks
-- SQLite, PostgreSQL, or MySQL support
+- Docker Development Environment
+- Postgresql, Mysql or Sqlite3 Database
+- Frontend Node SASS and Javascript compilation
+- Pico CSS for almost classless styling
+- esbuild javascript bundler
+- Wagtail CMS v6.3
+
+![Wagtail Starter Kit](./docs/welcome-screen.jpg)
 
 ## Getting started
 

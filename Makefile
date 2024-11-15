@@ -18,21 +18,22 @@ help:
 	@echo ""
 	@echo "Targets:"
 	@echo " Docker Compose commands"
-	@echo "  build      Build the Docker containers"
-	@echo "  up         Start the Docker containers"
-	@echo "  down       Stop and remove the Docker containers"
-	@echo "  destroy    Stop and remove the Docker containers, networks, and volumes"
-	@echo "  run		Run the Django development server"
+	@echo "  build          Build the Docker containers"
+	@echo "  up             Start the Docker containers"
+	@echo "  down           Stop and remove the Docker containers"
+	@echo "  destroy        Stop and remove the Docker containers, networks, and volumes"
+	@echo "  run            Run the Django development server"
 	@echo ""
 	@echo " Container commands"
-	@echo "  migrate    Run Django migrations"
-	@echo "  superuser  Create a superuser"
-	@echo "  restoredb  Restore the database from a backup"
-	@echo "  sh			Execute a command in a running container"
-	@echo "  restart    Restart the containers"
+	@echo "  migrate        Run Django migrations"
+	@echo "  superuser      Create a superuser"
+	@echo "  restoredb      Restore the database from a backup"
+	@echo "  sh             Execute a command in a running container"
+	@echo "  restart        Restart the containers"
 	@echo ""
-	@echo " Quckstart"
-	@echo "  quickstart Build, start, and run the containers"
+	@echo " Miscellaneous"
+	@echo "  quickstart     Build, start, and run the containers"
+	@echo "  requirements   Export requirements.txt"
 	@echo ""
 
 # Build the containers
@@ -83,3 +84,8 @@ superuser:
 # Qucikstart
 .PHONY: quickstart
 quickstart: build up migrate run
+
+# Export requirements.txt
+.PHONY: requirements
+requirements:
+	poetry export -f requirements.txt --output requirements.txt  --without-urls --without-hashes

@@ -38,5 +38,16 @@ services:
       MYSQL_ROOT_HOST: '%'
       MYSQL_HOST: db
       MYSQL_PORT: 3306
+
+  # A convienient utility app to manage the database https://hub.docker.com/_/adminer/
+  # Adminer is a full-featured database management tool written in PHP.
+  # It can be used to manage MySQL, PostgreSQL, SQLite, MS SQL, Oracle, SimpleDB, Elasticsearch, and MongoDB databases.
+  # Accessible at http://localhost:8080 or depending on the database type:
+  #   (Postgres: http://localhost:8080/?mysql=db&username=app&db=app)
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+
 volumes:
   dbdata:

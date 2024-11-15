@@ -81,9 +81,19 @@ migrate:
 superuser:
 	$(DC) exec app python manage.py createsuperuser
 
+# Collect static files
+.PHONY: collectstatic
+collectstatic:
+	$(DC) exec app python manage.py collectstatic --noinput
+
+# Run tests, you will need to have run `make collectstatic` first
+.PHONY: test
+test:
+	$(DC) exec app python manage.py test
+
 # Qucikstart
 .PHONY: quickstart
-quickstart: build up migrate run
+quickstart: build up migrate collectstatic test run
 
 # Export requirements.txt
 .PHONY: requirements

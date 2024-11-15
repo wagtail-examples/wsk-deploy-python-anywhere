@@ -32,8 +32,11 @@ help:
 	@echo "  restart        Restart the containers"
 	@echo ""
 	@echo " Miscellaneous"
-	@echo "  quickstart     Build, start, and run the containers"
-	@echo "  requirements   Export requirements.txt"
+	@echo "  quickstart     Build, start, and run the containers (npm & docker)"
+	@echo "  requirements   Export requirements.txt (poetry)"
+	@echo "  clean          Clean up generated files and folders (node_modules, static, media, etc.)"
+	@echo "  frontend       Build the frontend (npm)"
+	@echo "  start          Build the front end and start local development server (npm)"
 	@echo ""
 
 # Build the containers
@@ -91,11 +94,29 @@ collectstatic:
 test:
 	$(DC) exec app python manage.py test
 
-# Qucikstart
+# Quickstart
 .PHONY: quickstart
-quickstart: build up migrate collectstatic test run
+quickstart: frontend build up migrate collectstatic test run
+
+# Build the fontend
+.PHONY: frontend
+frontend:
+	npm install
+	npm run build
+
+# Start the frontend and run the local development server
+.PHONY: start
+start:
+	npm install
+	npm run build
+	npm run start
 
 # Export requirements.txt
 .PHONY: requirements
 requirements:
 	poetry export -f requirements.txt --output requirements.txt  --without-urls --without-hashes
+
+# Clean up
+.PHONY: clean
+clean:
+	rm -rf ./node_modules ./static ./static_compiled ./media

@@ -1,4 +1,6 @@
 services:
+  # To use this databse service locally
+  # you need to specify this docker-compose.override.yaml in the Makefile
   app:
     build:
       args:

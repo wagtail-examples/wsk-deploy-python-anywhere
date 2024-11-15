@@ -17,19 +17,18 @@ services:
   # A convienient utility app to manage the database https://hub.docker.com/_/adminer/
   # Adminer is a full-featured database management tool written in PHP.
   # It can be used to manage MySQL, PostgreSQL, SQLite, MS SQL, Oracle, SimpleDB, Elasticsearch, and MongoDB databases.
-  # Accessible at http://localhost:8080
-  # ADMINER - un-comment to use ---------------------------------------
+  # Accessible at http://localhost:8080 or depending on the database type:
+  #   (Postgres: http://localhost:8080/?pgsql=db&username=app&db=app)
+  #   (MySQL: http://localhost:8080/?mysql=db&username=app&db=app)
   adminer:
     image: adminer
     ports:
       - 8080:8080
-  # END ADMINER -------------------------------------------------------
 
   # A convienient utility app to test 'real' emails https://hub.docker.com/r/mailhog/mailhog/
   # MailHog is an email testing tool for developers.
   # It catches all emails sent by your application and allows you to preview them in a web interface.
   # Accessible at http://localhost:8025
-  # MAILHOG - un-comment to use ---------------------------------------
   mailhog:
     image: mailhog/mailhog
     platform: linux/amd64
@@ -38,4 +37,3 @@ services:
     ports:
       - 1025:1025 # smtp server
       - 8025:8025 # web ui
-  # END MAILHOG -------------------------------------------------------

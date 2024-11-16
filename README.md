@@ -13,6 +13,22 @@ This is a starter kit for a Wagtail project. It includes a Docker setup for loca
 
 ![Wagtail Starter Kit](./docs/welcome-screen.jpg)
 
+## Requirements
+
+Required:
+
+- [Python >= 3.10](https://www.python.org/downloads/)
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [Node.js](https://nodejs.org/en/) (for frontend build tools)
+
+Optional:
+- [Git](https://git-scm.com/) (optional, for version control)
+- [Make](https://www.gnu.org/software/make/) (optional, for running commands)
+- [NVM](https://github.com/nvm-sh/nvm) (optional, for managing Node versions)
+- [pre-commit](https://pre-commit.com/) (optional, for running code checks)
+- [poetry](https://python-poetry.org/) (optional, for managing Python dependencies)
+
 ## Getting started
 
 1. Clone this repository [https://github.com/wagtail-examples/wagtail-starter-kit.git](https://github.com/wagtail-examples/wagtail-starter-kit.git) to a location on your computer

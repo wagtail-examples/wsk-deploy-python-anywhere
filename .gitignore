@@ -164,6 +164,5 @@ cython_debug/
 # Local
 node_modules/
 /static/
-/static_compiled/
 /media/
 .DS_Store

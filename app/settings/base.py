@@ -17,12 +17,10 @@ from pathlib import Path
 PROJECT_DIR = Path.resolve(Path(__file__).parent.parent)
 BASE_DIR = Path.resolve(PROJECT_DIR.parent)
 
-environment = os.environ.copy()
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = environment.get("DJANGO_SECRET_KEY", None)
-ALLOWED_HOSTS = environment.get("DJANGO_ALLOWED_HOSTS", "").split(",")
-DEBUG = environment.get("DEBUG", "False").lower() == "true"
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", None)
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",")
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 # Application definition
 
@@ -88,26 +86,26 @@ WSGI_APPLICATION = "app.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-if environment.get("MYSQL_DATABASE", None):
+if os.getenv("MYSQL_DATABASE", None):
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.mysql",
-            "NAME": environment.get("MYSQL_DATABASE"),
-            "USER": environment.get("MYSQL_USER"),
-            "PASSWORD": environment.get("MYSQL_PASSWORD"),
-            "HOST": environment.get("MYSQL_HOST"),
-            "PORT": environment.get("MYSQL_PORT"),
+            "NAME": os.getenv("MYSQL_DATABASE"),
+            "USER": os.getenv("MYSQL_USER"),
+            "PASSWORD": os.getenv("MYSQL_PASSWORD"),
+            "HOST": os.getenv("MYSQL_HOST"),
+            "PORT": os.getenv("MYSQL_PORT"),
         }
     }
-elif environment.get("POSTGRES_DB", None):
+elif os.getenv("POSTGRES_DB", None):
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "NAME": environment.get("POSTGRES_DB"),
-            "USER": environment.get("POSTGRES_USER"),
-            "PASSWORD": environment.get("POSTGRES_PASSWORD"),
-            "HOST": environment.get("POSTGRES_HOST"),
-            "PORT": environment.get("POSTGRES_PORT"),
+            "NAME": os.getenv("POSTGRES_DB"),
+            "USER": os.getenv("POSTGRES_USER"),
+            "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+            "HOST": os.getenv("POSTGRES_HOST"),
+            "PORT": os.getenv("POSTGRES_PORT"),
         }
     }
 else:
@@ -186,7 +184,7 @@ STORAGES = {
 
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = environment.get("WAGTAIL_SITE_NAME", "Local Host")
+WAGTAIL_SITE_NAME = os.getenv("WAGTAIL_SITE_NAME", "Local Host")
 
 # Search
 # https://docs.wagtail.org/en/stable/topics/search/backends.html
@@ -198,9 +196,7 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = environment.get(
-    "WAGTAILADMIN_BASE_URL", "http://localhost:8000"
-)
+WAGTAILADMIN_BASE_URL = os.getenv("WAGTAILADMIN_BASE_URL", "http://localhost:8000")
 
 # Allowed file extensions for documents in the document library.
 # This can be omitted to allow all files, but note that this may present a security risk

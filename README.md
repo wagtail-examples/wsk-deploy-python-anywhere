@@ -1,6 +1,14 @@
-# Wagtail Starter Kit (base)
+# Wagtail Starter Kit (deploy to pythonanywhere)
 
 This is a starter kit for a Wagtail project. It includes a Docker setup for local development, a basic project structure, and some useful tools and libraries.
+
+You can use this project as a starting point for your own Wagtail projects and build upon it as needed.
+
+This project is free to use and modify as you see fit. PythonAnywhere deployment instructions are included and getting started is free and straight forward. [Open a free account](
+    https://eu.pythonanywhere.com/?affiliate_id=00009409
+) and follow the instructions in the deployment guide.
+
+*the link above is a referal link and I will benefit financially if you use the link and later use pythonanywhere paid services or you can go to `https://www.pythonanywhere.com/`*
 
 ## Features
 
@@ -17,10 +25,11 @@ This is a starter kit for a Wagtail project. It includes a Docker setup for loca
 
 Required:
 
-- [Python >= 3.10](https://www.python.org/downloads/)
-- [Docker](https://www.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
-- [Node.js](https://nodejs.org/en/) (for frontend build tools)
+- [Python >= 3.10](https://www.python.org/downloads/) (developemnt and deployment)
+- [Docker](https://www.docker.com/) (for local development)
+- [Docker Compose](https://docs.docker.com/compose/) (for local development)
+- [Node.js](https://nodejs.org/en/) (for frontend build tools) (for frontend build tools in development)
+- An account with `PythonAnywhere` (for deployment)
 
 Optional:
 - [Git](https://git-scm.com/) (optional, for version control)
@@ -31,7 +40,7 @@ Optional:
 
 ## Getting started
 
-1. Clone this repository [https://github.com/wagtail-examples/wagtail-starter-kit.git](https://github.com/wagtail-examples/wagtail-starter-kit.git) to a location on your computer
+1. Clone this repository [https://github.com/wagtail-examples/wsk-deploy-python-anywhere](https://github.com/wagtail-examples/wsk-deploy-python-anywhere) to a location on your computer
 2. Change into the project directory
 3. Run `make build` to build the Docker containers
 4. Run `make up` to start the Docker containers
@@ -53,7 +62,17 @@ If you haven't made changes to the configuration the app will have available the
 
 - Use sqlite as the database
 - A mail utility will be available at [http://localhost:8025](http://localhost:8025)
-- A sqlite3 management utility will be available at [http://localhost:8080](http://localhost:8080)
+- A database management utility will be available at [http://localhost:8080](http://localhost:8080)
+
+## Working with the fronend
+
+The project uses [Pico CSS](https://picocss.com/) for styling. It's a minmal setup that you can build on.
+
+When you first run the project you may notice that no styling is applied. This is because the first time you run the project with `make up` the compiled frontend files might not be available. Just run the frontend build script and refresh the page. [Read on](./docs/frontend-development.md)
+
+## Working with the backend
+
+The project uses Docker for local development. The Wagtail project is in the `app` directory. The project is set up to use a SQLite database by default. You can change this to use Mysql or Postgres. [Read on](./docs/backend-development.md)
 
 ## View the site
 
@@ -61,52 +80,19 @@ The site will be available at [http://localhost:8000](http://localhost:8000).
 
 The Wagtail admin interface will be available at [http://localhost:8000/admin](http://localhost:8000/admin).
 
-## Choose a databse (optional)
-
-By default, the project uses sqlite3. If you'd like to use MySQL or Postgres, uncomment the required `DC` variable in the Makefile and comment out the others.
-
-## Frontend
-
-### CSS Styling
-
-The project uses [Pico CSS](https://picocss.com/) for styling. It's a minmal setup that you can build on.
-
-When you first run the project you will probably notice that no styling is applied. This is because the first time you run the project with `make up` the compiled frontend files won't be available. Just run the frontend build scripts below and refresh the page.
-
-### JavaScript
-
-The project make no assumption about JavaScript libraries. You can add your own as needed.
-
-### Build tools
-
-The project uses [SASS](https://sass-lang.com/) for CSS compilation and [esbuild](https://esbuild.github.io/) for JavaScript bundling. You can run the build tools with the following commands:
-
-```bash
-nvm use
-npm install
-npm start
-```
-
-`npm start` will also run BrowserSync to reload the browser when changes are made, it makes your site available at [http://localhost:3000](http://localhost:3000)
-
-You will need to make sure the Django server is running at the same time.
-
-### Styleguide module
-
-The project includes a styleguide page at [http://localhost:8000/styleguide/](http://localhost:8000/styleguide/) which demonstrates the Pico CSS classless styling and includes some common HTML elements.
-
-The styleguide is available only in debug mode. If required you can remove the style guide from the project by removing the `styleguide` app from the `INSTALLED_APPS` in `base.py`.
-
-
 ## Deployment
 
-Currenyly there is no deployment setup included in this project. You could try this [Wagtail deployment guide](https://docs.wagtail.io/en/stable/deploying/index.html) for some ideas.
+This project is ideally suited to deployment on `PythonAnywhere`.
 
-There's also a tutorial here on how to deploy a Wagtail site to [PythonAnywhere](https://www.nickmoreton.co.uk/articles/deploy-wagtail-cms-to-pythonanywhere/)
+[Read the deployment guide](./docs/deployment.md) for more information.
+
+## Further reading
+
+What's possible and some suggestions for further development are available in the [What's next](./docs/what-next.md) document.
 
 ## Contributing
 
-If you have any suggestions or improvements, please open an issue or a pull request.
+If you have any suggestions or improvements, please open an [issue](https://github.com/wagtail-examples/wsk-deploy-python-anywhere/issues) or a [pull request](https://github.com/wagtail-examples/wsk-deploy-python-anywhere/pulls).
 
 ## License
 

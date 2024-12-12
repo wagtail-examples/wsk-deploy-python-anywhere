@@ -36,7 +36,7 @@ Optional:
 3. Run `make build` to build the Docker containers
 4. Run `make up` to start the Docker containers
 5. Run `make migrate` to apply database migrations
-6. Run `make createsuperuser` to create a superuser
+6. Run `make superuser` to create a superuser
 7. Run `make run` to start the Django development server
 
 ### Quick start
@@ -49,6 +49,12 @@ make quickstart
 
 You'll need to run `make superuser` separately.
 
+If you haven't made changes to the configuration the app will have available the following services for use in development:
+
+- Use sqlite as the database
+- A mail utility will be available at [http://localhost:8025](http://localhost:8025)
+- A sqlite3 management utility will be available at [http://localhost:8080](http://localhost:8080)
+
 ## View the site
 
 The site will be available at [http://localhost:8000](http://localhost:8000).
@@ -57,7 +63,7 @@ The Wagtail admin interface will be available at [http://localhost:8000/admin](h
 
 ## Choose a databse (optional)
 
-By default, the project uses PostgreSQL. If you'd like to use MySQL or Sqlite3 instead uncomment the required `DC` variable in the Makefile and comment out the others.
+By default, the project uses sqlite3. If you'd like to use MySQL or Postgres, uncomment the required `DC` variable in the Makefile and comment out the others.
 
 ## Frontend
 
@@ -108,4 +114,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Development suggestions
 
-Sepecific suggestions for development are Comming soon... but for the moment I'd suggest you take a look at the [Wagtail documentation](https://docs.wagtail.io/en/stable/)
+Sepecific suggestions for development are Comming soon... for now  please take a look at the [Wagtail documentation](https://docs.wagtail.io/en/stable/)

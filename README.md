@@ -1,8 +1,14 @@
-# Wagtail Starter Kit (base)
+# Wagtail Starter Kit (deploy to pythonanywhere)
 
 This is a starter kit for a Wagtail project. It includes a Docker setup for local development, a basic project structure, and some useful tools and libraries.
 
 You can use this project as a starting point for your own Wagtail projects and build upon it as needed.
+
+This project is free to use and modify as you see fit. PythonAnywhere deployment instructions are included and getting started is free and straight forward. [Open a free account](
+    https://eu.pythonanywhere.com/?affiliate_id=00009409
+) and follow the instructions in the deployment guide.
+
+*the link above is a referal link and I will benefit financially if you use the link and later use pythonanywhere paid services or you can go to `https://www.pythonanywhere.com/`*
 
 ## Features
 
@@ -23,6 +29,7 @@ Required:
 - [Docker](https://www.docker.com/) (for local development)
 - [Docker Compose](https://docs.docker.com/compose/) (for local development)
 - [Node.js](https://nodejs.org/en/) (for frontend build tools) (for frontend build tools in development)
+- An account with `PythonAnywhere` (for deployment)
 
 Optional:
 - [Git](https://git-scm.com/) (optional, for version control)
@@ -33,7 +40,7 @@ Optional:
 
 ## Getting started
 
-1. Clone this repository [https://github.com/wagtail-examples/wagtail-starter-kit.git](https://github.com/wagtail-examples/wagtail-starter-kit.git) to a location on your computer
+1. Clone this repository [https://github.com/wagtail-examples/wsk-deploy-python-anywhere](https://github.com/wagtail-examples/wsk-deploy-python-anywhere) to a location on your computer
 2. Change into the project directory
 3. Run `make build` to build the Docker containers
 4. Run `make up` to start the Docker containers
@@ -75,23 +82,17 @@ The Wagtail admin interface will be available at [http://localhost:8000/admin](h
 
 ## Deployment
 
-Currenyly there is no deployment setup included in this project. You could try this [Wagtail deployment guide](https://docs.wagtail.org/en/stable/deployment/index.html) for some ideas.
+This project is ideally suited to deployment on `PythonAnywhere`.
 
-## Deployment Examples
+[Read the deployment guide](./docs/deployment.md) for more information.
 
-1.  How to deploy a Wagtail site to [PythonAnywhere](https://www.nickmoreton.co.uk/articles/deploy-wagtail-cms-to-pythonanywhere/), this does need you to have a paid account with PythonAnywhere.
-2. This [example](https://github.com/wagtail-examples/wsk-deploy-python-anywhere) is a fork of this starter kit which has documentation on how to deploy to PythonAnywhere, using a free account.
+## Further reading
 
-## Bonus branches
-
-There are 2 branches that you can use to explore more features of the project:
-
-- [Wagtail 'Getting Started Tutorial' PR](https://github.com/wagtail-examples/wagtail-starter-kit/pull/3) Is a run through of the official Wagtail Getting Started tutorial where a simple blog is created.
-- [Wagtail 'Extended Tutorial'](https://github.com/wagtail-examples/wagtail-starter-kit/pull/4) Is a run through of the official Wagtail Extended Tutorial where the Getting Started Tutorial is extended to include more features.
+What's possible and some suggestions for further development are available in the [What's next](./docs/what-next.md) document.
 
 ## Contributing
 
-If you have any suggestions or improvements, please open an [issue](https://github.com/wagtail-examples/wagtail-starter-kit/issues) or a [pull request](https://github.com/wagtail-examples/wagtail-starter-kit/pulls).
+If you have any suggestions or improvements, please open an [issue](https://github.com/wagtail-examples/wsk-deploy-python-anywhere/issues) or a [pull request](https://github.com/wagtail-examples/wsk-deploy-python-anywhere/pulls).
 
 ## License
 

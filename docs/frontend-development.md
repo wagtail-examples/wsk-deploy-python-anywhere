@@ -41,5 +41,3 @@ npm run build
 ```
 
 If you view any of the frontend files in the `static_compiled` directory you will see that the files are minified and optimised for production.
-
-**Note:** The static files are compiled to the `static_compiled` directory. Depending on your deployment environment you may need to make sure you run the `npm run build` command before deploying. The `static_compiled` directory is not included in the repository becuase it is ignored in the `.gitignore` file, so you will need to remove this line if you want to include the compiled files in the repository.

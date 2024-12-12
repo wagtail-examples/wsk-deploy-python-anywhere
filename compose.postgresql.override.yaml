@@ -1,6 +1,6 @@
 services:
   # To use this databse service locally
-  # you need to specify this docker-compose.override.yaml in the Makefile
+  # configure it in the Makefile
   app:
     build:
       args:
@@ -33,10 +33,10 @@ services:
       POSTGRES_PORT: 5432
 
   # A convienient utility app to manage the database https://hub.docker.com/_/adminer/
-  # Adminer is a full-featured database management tool written in PHP.
-  # It can be used to manage MySQL, PostgreSQL, SQLite, MS SQL, Oracle, SimpleDB, Elasticsearch, and MongoDB databases.
-  # Accessible at http://localhost:8080 or depending on the database type:
-  #   (Postgres: http://localhost:8080/?pgsql=db&username=app&db=app)
+  # Accessible at http://localhost:8080/?pgsql choose postgres as the database type in the UI
+  # server: db
+  # user: app
+  # password: app
   adminer:
     image: adminer
     ports:

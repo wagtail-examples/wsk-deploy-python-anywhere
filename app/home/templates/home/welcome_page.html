@@ -22,9 +22,20 @@
         <a href="{% wagtail_documentation_path %}/releases/{% wagtail_release_notes_path %}">
             {% trans "Wagtail core release notes" %}
         </a>
+        {% if is_development %}
+        {% comment %}
+        The styleguide is only usful in development mode. This hides the link in production when you run your deployemnt.
+
+        # SUGGESTED ACTION
+        It's not useful to not include this link in your own templates.
+        The url for the styleguide is also defined in the urls.py file.
+        The styleguide is also loaded in the dev.py settings file.
+        You can view the styleguide by visiting /style-guide/ in development.
+        {% endcomment %}
         <a href="{% url 'style-guide' %}" role="button">
             {% trans "Starter Kit Style Guide" %}
         </a>
+        {% endif %}
     </div>
 </header>
 

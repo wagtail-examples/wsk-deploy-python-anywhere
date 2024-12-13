@@ -2,6 +2,8 @@
 
 This is a starter kit for a Wagtail project. It includes a Docker setup for local development, a basic project structure, and some useful tools and libraries.
 
+You can use this project as a starting point for your own Wagtail projects and build upon it as needed.
+
 ## Features
 
 - Docker Development Environment
@@ -17,10 +19,10 @@ This is a starter kit for a Wagtail project. It includes a Docker setup for loca
 
 Required:
 
-- [Python >= 3.10](https://www.python.org/downloads/)
-- [Docker](https://www.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
-- [Node.js](https://nodejs.org/en/) (for frontend build tools)
+- [Python >= 3.10](https://www.python.org/downloads/) (developemnt and deployment)
+- [Docker](https://www.docker.com/) (for local development)
+- [Docker Compose](https://docs.docker.com/compose/) (for local development)
+- [Node.js](https://nodejs.org/en/) (for frontend build tools) (for frontend build tools in development)
 
 Optional:
 - [Git](https://git-scm.com/) (optional, for version control)
@@ -53,49 +55,23 @@ If you haven't made changes to the configuration the app will have available the
 
 - Use sqlite as the database
 - A mail utility will be available at [http://localhost:8025](http://localhost:8025)
-- A sqlite3 management utility will be available at [http://localhost:8080](http://localhost:8080)
+- A database management utility will be available at [http://localhost:8080](http://localhost:8080)
+
+## Working with the fronend
+
+The project uses [Pico CSS](https://picocss.com/) for styling. It's a minmal setup that you can build on.
+
+When you first run the project you may notice that no styling is applied. This is because the first time you run the project with `make up` the compiled frontend files might not be available. Just run the frontend build script and refresh the page. [Read on](./docs/frontend-development.md)
+
+## Working with the backend
+
+The project uses Docker for local development. The Wagtail project is in the `app` directory. The project is set up to use a SQLite database by default. You can change this to use Mysql or Postgres. [Read on](./docs/backend-development.md)
 
 ## View the site
 
 The site will be available at [http://localhost:8000](http://localhost:8000).
 
 The Wagtail admin interface will be available at [http://localhost:8000/admin](http://localhost:8000/admin).
-
-## Choose a databse (optional)
-
-By default, the project uses sqlite3. If you'd like to use MySQL or Postgres, uncomment the required `DC` variable in the Makefile and comment out the others.
-
-## Frontend
-
-### CSS Styling
-
-The project uses [Pico CSS](https://picocss.com/) for styling. It's a minmal setup that you can build on.
-
-When you first run the project you will probably notice that no styling is applied. This is because the first time you run the project with `make up` the compiled frontend files won't be available. Just run the frontend build scripts below and refresh the page.
-
-### JavaScript
-
-The project make no assumption about JavaScript libraries. You can add your own as needed.
-
-### Build tools
-
-The project uses [SASS](https://sass-lang.com/) for CSS compilation and [esbuild](https://esbuild.github.io/) for JavaScript bundling. You can run the build tools with the following commands:
-
-```bash
-nvm use
-npm install
-npm start
-```
-
-`npm start` will also run BrowserSync to reload the browser when changes are made, it makes your site available at [http://localhost:3000](http://localhost:3000)
-
-You will need to make sure the Django server is running at the same time.
-
-### Styleguide module
-
-The project includes a styleguide page at [http://localhost:8000/styleguide/](http://localhost:8000/styleguide/) which demonstrates the Pico CSS classless styling and includes some common HTML elements.
-
-The styleguide is available only in debug mode. If required you can remove the style guide from the project by removing the `styleguide` app from the `INSTALLED_APPS` in `base.py`.
 
 
 ## Deployment

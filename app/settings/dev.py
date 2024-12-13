@@ -11,7 +11,8 @@ ALLOWED_HOSTS = ["*"]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-# Remove if not required
+# Remove "app.style_guide" not required
+# if you do remove this also remove the stylegude app from the urls.py file
 INSTALLED_APPS += ["app.style_guide", "wagtail.contrib.styleguide"]  # noqa F405
 
 

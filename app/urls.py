@@ -12,8 +12,6 @@ urlpatterns = [
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
-    # Remove if not required
-    path("style-guide/", include("app.style_guide.urls")),
 ]
 
 
@@ -24,6 +22,13 @@ if settings.DEBUG:
     # Serve static and media files from development server
     urlpatterns += staticfiles_urlpatterns()
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+    # REMOVE if not required
+    # If you do remove this also remove the stylegude app from the installed apps
+    # in the dev.py settings file
+    urlpatterns = urlpatterns + [
+        path("style-guide/", include("app.style_guide.urls")),
+    ]
 
 urlpatterns = urlpatterns + [
     # For anything not caught by a more specific rule above, hand over to

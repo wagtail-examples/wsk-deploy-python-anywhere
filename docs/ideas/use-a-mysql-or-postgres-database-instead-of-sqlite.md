@@ -6,6 +6,21 @@ If you'd like to use MySQL for your database, you can deploy MySQL on `PythonAny
 
 If you'd like to use Postgres, you can deploy a Postgres database on `PythonAnywhere` and add the database settings to your .env file. **(Postgres is a paid service on `PythonAnywhere`).**
 
+### Important
+If you make the chages below to switch to a different database you will need to run the migrations again and create a superuser again.
+
+Any content/data you added to the SQLite database will not be available in the new database. You will need to add it again.
+
+Open a console on `PythonAnywhere` and run the following commands:
+
+```bash
+workon your-virtual-environment-name
+python manage.py migrate
+python manage.py createsuperuser
+```
+
+You will also need to reload your web app from the `Web` tab in the `PythonAnywhere` dashboard.
+
 ## MySQL
 
 Create a MySQL database on `PythonAnywhere` from the Dashboard `Databases` tab. There may be a default database already created for you. You can use that database or create a new one.
@@ -17,7 +32,7 @@ If you are using the default database, you will need to set a password for the d
 Go to the root of your project and open  the .env file created earlier. Add the following settings:
 
 ```bash
-MYSQL_DATABASE='database-name'
+MYSQL_DATABASE='database$name'
 MYSQL_USER='Username'
 MYSQL_PASSWORD='password'
 MYSQL_HOST='Database host address'
@@ -45,6 +60,14 @@ set -a; source ~/your-web-app-name/.env; set +a
 
 *Here you need to add the path to your .env file. It can be an aboluste path or a relative path. The path should be the same as the path to the .env file in the root of your project. `~/` referes to your account home directory*
 
+### Install the MySQL client
+
+You will need to install the MySQL client to be able to connect to the database. Run the following command in the console:
+
+```bash
+pip install mysqlclient
+```
+
 
 ## Postgres
 
@@ -60,4 +83,10 @@ POSTGRES_USER='Username'
 POSTGRES_PASSWORD='password'
 POSTGRES_HOST='Database host address'
 POSTGRES_PORT=5432
+```
+
+You will need to install the Postgres client to be able to connect to the database. Run the following command in the console:
+
+```bash
+pip install psycopg2
 ```

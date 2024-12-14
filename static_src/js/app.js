@@ -1,3 +1,8 @@
+/**
+ * This is a simple example of a class in ES6.
+ * It will log a message to the console.
+ * Remove this content and write your scripts as required.
+ */
 class ShowMessage {
     constructor(times=3) {
         this.message = 'Hello from Wagtail starter kit!';

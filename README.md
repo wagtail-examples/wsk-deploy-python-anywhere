@@ -76,9 +76,16 @@ The Wagtail admin interface will be available at [http://localhost:8000/admin](h
 
 ## Deployment
 
-Currenyly there is no deployment setup included in this project. You could try this [Wagtail deployment guide](https://docs.wagtail.io/en/stable/deploying/index.html) for some ideas.
+Currenyly there is no deployment setup included in this project. You could try this [Wagtail deployment guide](https://docs.wagtail.org/en/stable/deployment/index.html) for some ideas.
 
 There's also a tutorial here on how to deploy a Wagtail site to [PythonAnywhere](https://www.nickmoreton.co.uk/articles/deploy-wagtail-cms-to-pythonanywhere/)
+
+## Bonus branches
+
+There are 2 branches that you can use to explore more features of the project:
+
+- [Wagtail 'Getting Started Tutorial' PR](https://github.com/wagtail-examples/wagtail-starter-kit/pull/3) Is a run through of the official Wagtail Getting Started tutorial where a simple blog is created.
+- [Wagtail 'Extended Tutorial'](https://github.com/wagtail-examples/wagtail-starter-kit/pull/4) Is a run through of the official Wagtail Extended Tutorial where the Getting Started Tutorial is extended to include more features.
 
 ## Contributing
 

@@ -97,7 +97,3 @@ If you have any suggestions or improvements, please open an [issue](https://gith
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Development suggestions
-
-Sepecific suggestions for development are Comming soon... for now  please take a look at the [Wagtail documentation](https://docs.wagtail.io/en/stable/)

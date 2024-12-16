@@ -73,12 +73,14 @@ The site will be available at [http://localhost:8000](http://localhost:8000).
 
 The Wagtail admin interface will be available at [http://localhost:8000/admin](http://localhost:8000/admin).
 
-
 ## Deployment
 
 Currenyly there is no deployment setup included in this project. You could try this [Wagtail deployment guide](https://docs.wagtail.org/en/stable/deployment/index.html) for some ideas.
 
-There's also a tutorial here on how to deploy a Wagtail site to [PythonAnywhere](https://www.nickmoreton.co.uk/articles/deploy-wagtail-cms-to-pythonanywhere/)
+## Deployment Examples
+
+1.  How to deploy a Wagtail site to [PythonAnywhere](https://www.nickmoreton.co.uk/articles/deploy-wagtail-cms-to-pythonanywhere/), this does need you to have a paid account with PythonAnywhere.
+2. This [example](https://github.com/wagtail-examples/wsk-deploy-python-anywhere) is a fork of this starter kit which has documentation on how to deploy to PythonAnywhere, using a free account.
 
 ## Bonus branches
 
@@ -89,12 +91,8 @@ There are 2 branches that you can use to explore more features of the project:
 
 ## Contributing
 
-If you have any suggestions or improvements, please open an issue or a pull request.
+If you have any suggestions or improvements, please open an [issue](https://github.com/wagtail-examples/wagtail-starter-kit/issues) or a [pull request](https://github.com/wagtail-examples/wagtail-starter-kit/pulls).
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Development suggestions
-
-Sepecific suggestions for development are Comming soon... for now  please take a look at the [Wagtail documentation](https://docs.wagtail.io/en/stable/)

@@ -93,11 +93,8 @@ What's possible and some suggestions for further development are available in th
 ## Contributing
 
 If you have any suggestions or improvements, please open an [issue](https://github.com/wagtail-examples/wsk-deploy-python-anywhere/issues) or a [pull request](https://github.com/wagtail-examples/wsk-deploy-python-anywhere/pulls).
+Currenyly there is no deployment setup included in this project. You could try this [Wagtail deployment guide](https://docs.wagtail.org/en/stable/deployment/index.html) for some ideas.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Development suggestions
-
-Sepecific suggestions for development are Comming soon... for now  please take a look at the [Wagtail documentation](https://docs.wagtail.io/en/stable/)
